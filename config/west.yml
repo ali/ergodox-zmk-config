@@ -1,11 +1,11 @@
 manifest:
   remotes:
-    - name: ali
-      url-base: https://github.com/ali
+    - name: slicemk
+      url-base: https://github.com/slicemk
   projects:
     - name: zmk
-      remote: ali
-      revision: feat/battery-reporting
+      remote: slicemk
+      revision: v20250120-min
       import: app/west.yml
   self:
     path: config
