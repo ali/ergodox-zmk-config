@@ -1,11 +1,37 @@
-This repository contains the default ZMK user configuration for the [ErgoDox
-Wireless](https://www.slicemk.com/pages/ergodox-wireless) keyboard. While the
-[SliceMK Keymap Configurator](https://config.slicemk.com/) is recommended for
-the majority of users, the GitHub Actions workflow provides some additional
-options for customization.
+Personal ZMK configuration for my SliceMK ErgoDox Wireless.
 
-If you have questions, feel free to join the [SliceMK
-Discord](https://discord.gg/FQvyd7BAaA).
+## My Hardware
+
+| Component | Model | Board ID |
+|-----------|-------|----------|
+| Dongle | Raytac MDBT50Q-RX | `nRF52840-MDBT50Q_RX-verD` |
+| Left half | SliceMK ErgoDox 202108 Green | `nRF52840-slicemk-ergodox-202108-green` |
+| Right half | SliceMK ErgoDox 202108 Green | `nRF52840-slicemk-ergodox-202108-green` |
+
+## Firmware Sources
+
+- **Dongle**: Built via GitHub Actions from this repo
+- **Peripherals**: Pre-built from [SliceMK peripheral page](https://docs.slicemk.com/keyboard/ergodox/peripheral/) (202108 Green)
+- **Stock firmware**: Kept in `firmware/` directory for convenience
+
+## Troubleshooting
+
+If pairing breaks between halves:
+1. Flash `firmware/nvsclear.uf2` to all three devices (dongle, left, right)
+2. Wait 15 seconds
+3. Flash normal firmware to each device
+4. Docs: [SliceMK NVS Clear](https://docs.slicemk.com/firmware/zmk/wireless/nvsclear/)
+
+## Button Reference
+
+| Button | Function |
+|--------|----------|
+| Right (Reset) | Single press = reboot · Double press = bootloader |
+| Left (User) | Single press = power off (wake with reset button) |
+
+---
+
+*Based on the [SliceMK ErgoDox Wireless](https://www.slicemk.com/pages/ergodox-wireless) default config.*
 
 # Getting Started
 
